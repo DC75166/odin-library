@@ -65,6 +65,7 @@ function displayBooks() {
         bookstatus.textContent = `Read Status: ${book.read ? 'Read' : 'Not Read'}`;
 
         const buttons = document.createElement('div');
+        buttons.classList.add('buttons');
 
         const togglebtn = document.createElement('button');
         togglebtn.textContent = 'Toggle Read Status';

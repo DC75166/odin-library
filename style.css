@@ -76,3 +76,35 @@ form{
     padding: 15px;
     gap: 12px;
 }
+.main{
+    display: flex;
+    padding: 20px;
+    margin-top: 9px;
+    gap: 12px;
+}
+.book-item{
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    border: 1px solid rgba(162,147,125,255);
+    gap: 8px;
+    background-color: rgba(255, 255, 255, 0.8);
+    color:  rgba(162,147,125,255);
+    height: 28vh;
+    width: 26vh;
+    flex: 1;
+}
+.buttons{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+button{
+    padding: 5px;
+    background-color: rgba(162,147,125,255);
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+
