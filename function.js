@@ -14,9 +14,14 @@ Book.prototype.toggleReadStatus = function () {
     this.read = !this.read;
   }
 
+  function updateLocalStorage() {
+    localStorage.setItem('libraryData', JSON.stringify(library));
+  }
+
 function addBookToLibrary(name, author, pages, read){
     const newBook = new Book(name, author, pages, read);
     library.push(newBook);
+    updateLocalStorage()
     displayBooks();
 }
 
@@ -24,6 +29,7 @@ function removeBookFromLibrary(id) {
     const index = library.findIndex(book => book.id === id);
     if (index !== -1) {
         library.splice(index, 1);
+        updateLocalStorage()
         displayBooks();
     }
 }
@@ -32,6 +38,7 @@ function togglebookStatus(id) {
     const book = library.find(book => book.id === id);
     if (book) {
         book.toggleReadStatus();
+        updateLocalStorage()
         displayBooks();
     }
 }
@@ -93,6 +100,16 @@ function displayBooks() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+
+    const storedLibrary = JSON.parse(localStorage.getItem('libraryData'));
+    if (storedLibrary) {
+        storedLibrary.forEach(book => {
+            const recreatedBook = new Book(book.name, book.author, book.pages, book.read);
+            recreatedBook.id = book.id;
+            library.push(recreatedBook);
+        });
+    }
+
     displayBooks();
 
     const newbookForm = document.querySelector('.newbookForm');

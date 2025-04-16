@@ -2,7 +2,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    /* outline: 1px solid red; */
+    outline: 1px solid red;
 }
 body{
     background-image: url(media/istockphoto-1299389385-612x612.webp);
@@ -10,7 +10,7 @@ body{
     background-size: cover;
 }
 .container{
-    height: 100vh;
+    min-height: 100vh;
     overflow: hidden;
 }
 .header{
@@ -34,7 +34,9 @@ body{
 }
 .lib-body{
     display: flex;
-    height: 100%;
+    align-items: flex-start;
+    height: auto;
+    overflow: hidden;
 }
 .sidebar{
     display: flex;
@@ -81,6 +83,10 @@ form{
     padding: 20px;
     margin-top: 9px;
     gap: 12px;
+    box-sizing: border-box;
+    overflow: hidden;
+    flex-wrap: wrap;
+    align-items: flex-start;
 }
 .book-item{
     display: flex;
@@ -90,9 +96,13 @@ form{
     gap: 8px;
     background-color: rgba(255, 255, 255, 0.8);
     color:  rgba(162,147,125,255);
-    height: 28vh;
     width: 26vh;
-    flex: 1;
+    box-sizing: border-box;
+    overflow: hidden;
+    word-wrap: break-word;
+    height: auto;
+    overflow: hidden;
+    flex-shrink: 0;
 }
 .buttons{
     display: flex;
